@@ -1,5 +1,4 @@
-# Tester
- # Testers
+# Testers
 This is a live test taking web app.
 
 # Website link: https://rocky-hollows-68289.herokuapp.com/ 
