@@ -1,0 +1,96 @@
+<div class="brand">
+    Testers</div>
+
+
+<!-- Navigation -->
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
+            <a class="navbar-brand" href="index.html">Testers</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="#/">Home</a>
+                </li>
+                <li>
+                    <a href="#/contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+<div class="container">
+
+    <div class="row">
+        <div class="box">
+            <div class="col-lg-12">
+                <hr/>
+                <h2 class="intro-text text-center">Contact Us:
+                    
+                </h2>
+                <hr/>
+            </div>
+            <div class="col-md-8">
+                <!-- Embedded Google Map using an iframe - to select your location find it on Google maps and paste the link as the iframe src. If you want to use the Google Maps API instead then have at it! -->
+                <iframe width="100%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?hl=en&amp;ie=UTF8&amp;ll=23.0625,85.677068&amp;spn=56.506174,79.013672&amp;t=m&amp;z=4&amp;output=embed"></iframe>
+            </div>
+            <div class="col-md-4">
+                <p>Phone:
+                    <strong>(+91)-123-456-7890</strong>
+                </p>
+                <p>Email:
+                    <strong><a href="mailto:mahto.sanjay41@gmail.com">contact@testers.com</a></strong>
+                </p>
+                <p>Address:
+                    <strong>Mumbai,MH
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;
+                            India</strong>
+                </p>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <!-- /.container -->
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p>Copyright &copy; Chinmaya Kinnarkar,2017
+                        <br/>Contact Me:<br/>
+                    
+                        <a href="https://github.com/ChinmayaKinnarkar"><i class="fa fa-github fa-fw fa-2x"></i></a> &nbsp;&nbsp;
+                        <a href="https://www.linkedin.com/in/chinmaya-kinnarkar-ab0620ba/"><i class="fa fa-linkedin fa-2x"></i></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script>
+    function myFunction() {
+        var input = document.getElementById('email');
+        email = input.value;
+        var input = document.getElementById('subject');
+        subject = input.value;
+
+        window.location.href = "mailto:" + email + "?subject=" + subject;
+    }
+
+</script>

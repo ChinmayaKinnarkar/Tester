@@ -1,0 +1,185 @@
+
+ <!-- W3 schools styles-->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<div ng-controller="dashCtrl as dashboard">
+<nav class="navbar fixed-top navbar-toggleable-md navbar-inverse bg-inverse">
+<br/>
+        <div class="container">
+            <a class="navbar-brand" href=""><h2><i class="fa fa-line-chart" aria-hidden="true"></i>&nbsp; DashBoard</h2></a>
+         
+         <!-- Button for tests taken -->
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    <button style="text-align:center;" class="btn btn-default dropdown-toggle " type="button" data-toggle="dropdown">Tests Taken
+    <span class="caret"></span></button>
+      <ul class="dropdown-menu">
+     <div  style="background-color: #29b6f6;" class="list group" ng-repeat="T in dashboard.testtakenDetails">
+      <a href="#/liveTest/{{dashboard.userId}}/{{T.test[0]}}" class="list-group-item ">Test ID: {{T.test[0]}}</a>
+      <a class="list-group-item ">Correct Ans: {{T.totalCorrectAnswers}}</a>
+      <a class="list-group-item"> Score: {{T.score}}</a>
+       <a class="list-group-item"> Total Time Taken: {{T.timeTaken}} Seconds</a>
+      <br/>
+    </div>
+     </ul>
+
+  <ul align="right" class="nav navbar-nav pull-right">
+          <!-- End of tests Taken Button -->
+          <!-- Button for tests taken -->
+         <button align="right" type="button" style="margin:7px" class="btn btn-logged btn-primary" aria-haspopup="true" aria-expanded="false"><a style="color:white;" href="#/takeTest/{{dashboard.userId}}">Take Test&nbsp;</a></button>
+          <!-- End of tests Taken Button -->
+          <button align="right" type="button"  style="margin:7px" class="btn btn-logged btn-success dropdown-toggle" ng-init="dashboard.getName()" id="logout" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Welcome! {{dashboard.user}}&nbsp;<span class="caret"></span></button>
+          <ul  class="dropdown-menu">
+            <li align="center"><a href="" ng-click="dashboard.logout()">Logout</a></li>
+          </ul>
+        </ul>
+      </div>
+      <br/>
+</nav>
+
+
+    <h1 align="center" style="color:white;">{{dashboard.heading}}</h1>
+    <h4 align="center" style="color: white;">: Your Performance Statistics :</h4>
+  <br>
+
+  <div  class="row container-fluid">
+
+  <div class="col-sm-4 w3-card-2" style="width:49%;">
+    <header class="w3-container w3-orange">
+      <h3 align="center">Number of Tests Taken</h3>
+    </header>
+    <div class="w3-container w3-white">
+      <p align="center"><img align="center" src="img/test-1.jpg" class="img-fluid img-responsive" alt="Responsive image"/></p>
+    </div>
+    <footer class="w3-container w3-orange">
+      <h5 align="center">Tests Taken: {{dashboard.testtaken}}</h5>
+    </footer>
+  </div>
+  &nbsp;
+   <div class="col-sm-4 w3-card-2" style="width:49%;">
+    <header class="w3-container w3-orange">
+      <h3 align="center">Average Marks</h3>
+    </header>
+    <div class="w3-container w3-white">
+      <p align="center"><img align="center" src="img/test-3.jpg" class="img-fluid img-responsive" alt="Responsive image"/></p>
+    </div>
+    <footer class="w3-container w3-orange">
+      <h5 align="center">Average Score: {{dashboard.averagemarks}}</h5>
+    </footer>
+  </div>
+  </div>
+  <br/>
+
+ <div  class="row container-fluid">
+
+  <div class="col-sm-4 w3-card-2" style="width:100%;">
+    <header class="w3-container w3-orange">
+      <h3 align="center">Performance Of User</h3>
+    </header>
+    <br/>
+    <p align="center">
+    <button style="align-content: center;">
+    <a href=""  data-id="{{dashboard.testtakenDetailsforgraph}}" data-user="{{dashboard.testtakenDetailslabels}}" class=" list-group-item list-group-itemfortestid list-group-itemfortest" data-toggle="modal" data-target="#graphdetails">Performance</a>
+     </button></p>
+     <br/>
+    </div>
+  </div>
+
+   <!-- Modal for creating Questions -->
+        <div class="modal fade" id="graphdetails" role="dialog" data-backdrop="false">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 align="center" class="modal-title">: Performance Of The User :</h4>
+                    </div>
+                    <div style="background-color: #E8E9E9;" class="modal-body">
+                     <canvas   id="myChart" width="300" height="300"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+ 
+ <script>
+
+function myfunc(){
+  var executed;
+  if(executed == false)
+  {
+    loaction.reload();
+    executed = true;
+  }
+
+}
+ var dat = [];
+
+var label = [];
+  $(document).on("click",".list-group-itemfortestid", function() {
+                var Id = $(this).data('id');
+                console.log(Id);
+                if(dat.length == 0)
+                {
+                for(var i=0;i<Id.length;i++)
+                {
+                  
+                  dat.push(Id[i]);
+                
+                }
+              }
+            });
+  $(document).on("click",".list-group-itemfortest", function() {
+                var testname = $(this).data('user');
+                console.log(testname);
+                if(label.length == 0)
+                  {
+                for(var i=0;i<testname.length;i++)
+                {
+                  
+                  label.push(testname[i]);
+                }
+                }
+            });
+var ctx = document.getElementById("myChart").getContext('2d');
+console.log(ctx);
+console.log(dat);
+console.log(label);
+
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: label,
+        datasets: [{
+            label: 'Performance Graph Of Tests Given',
+            data: dat,
+            borderWidth: 2
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
+</script>
+<br/>
+<footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p>Copyright &copy; Chinmaya Kinnarkar,2017
+                    <br/>Contact Me:<br/>
+                    
+                    <a href="https://github.com/ChinmayaKinnarkar"><i class="fa fa-github fa-fw fa-2x"></i></a>
+                       &nbsp;&nbsp;
+                    <a href="https://www.linkedin.com/in/chinmaya-kinnarkar-ab0620ba/"><i class="fa fa-linkedin fa-2x"></i></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+

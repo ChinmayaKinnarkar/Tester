@@ -1,0 +1,33 @@
+{
+  "name": "Testers",
+  "version": "1.0.0",
+  "description": "A SPA(single page Application) for Online Test Taking System system",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Chinmaya Kinnarkar",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.17.2",
+    "connect-flash": "^0.1.1",
+    "connect-redis": "^3.3.2",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.3",
+    "express": "^4.15.3",
+    "express-jwt": "*",
+    "express-session": "^1.15.3",
+    "fs": "0.0.1-security",
+    "method-override": "^2.3.9",
+    "mongoose": "^4.10.5",
+    "morgan": "^1.8.2",
+    "multer": "^1.3.0",
+    "nodemailer": "^4.0.1",
+    "passport": "^0.4.0",
+    "passport-facebook": "^2.1.1",
+    "passport-google-oauth2": "^0.1.6",
+    "path": "^0.12.7",
+    "shortid": "^2.2.8"
+  }
+}

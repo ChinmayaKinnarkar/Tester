@@ -1,0 +1,85 @@
+<style> 
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid red;
+    border-radius: 4px;
+}
+</style>
+    <div ng-controller="resetCtrl as reset">
+    <div class="brand">Testers</div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
+                <a class="navbar-brand" href="index.html">Testers</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#/">Home</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+   <div class="container">
+
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12">
+                    <form ng-submit="reset.submit()">
+                    <div class="form-group">
+                    <label for="email"><h3>Email</h3></label>
+                    <input type="text" name="email" tabindex="1" ng-model="reset.email" class="form-control" placeholder="Please enter your email" value="" required="true">
+                  </div>
+                     <div class="form-group">
+                    <label for="password"><h3>New Password</h3></label>
+                    <input type="text" name="password" tabindex="1" ng-model="reset.password" class="form-control" placeholder="Please enter new password" value="" required="true">
+                  </div>
+                  <div class="form-group">
+                    <div class="row">
+                      <div style="color:green;" class="col-sm-6 col-sm-offset-3">
+                        <input style="color:black;" type="submit"   tabindex="4" class="form-control btn btn-login" value="submit">
+                      </div>
+                    </div>
+                  </div>
+                     </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p>Copyright &copy; Chinmaya Kinnarkar,2017</p>
+                    <br/>Contact Me:<br/>
+                    <a href="https://github.com/ChinmayaKinnarkar"><i class="fa fa-github fa-fw fa-2x"></i></a>
+                       &nbsp;&nbsp;
+                    <a href="https://www.linkedin.com/in/chinmaya-kinnarkar-ab0620ba/"><i class="fa fa-linkedin fa-2x"></i></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    </div>

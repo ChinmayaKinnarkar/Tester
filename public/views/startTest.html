@@ -1,0 +1,139 @@
+<style>
+.option{
+	width:470px;
+	display:inline block;
+	padding:10px 0 10px 0;
+	vertical-align: middle;
+	background: rgb(255, 255, 255, 0.5);
+	margin:10px 0 10px 10px;
+	color:#000000;
+	border-radius:20px;
+}
+.option:hover{
+	background: #00030C;
+	color: #F6F6F6;
+}
+.next{
+
+	border:none;
+	outline:none;
+	background: rgb(255, 25,255,0.5);
+	width:150px;
+	height:50px;
+	border-radius:20px;
+	cursor:pointer;
+	float:right;
+	margin:10px;
+}
+.next:hover{
+	background: #00030C;
+	color:#f6f6f6;
+}
+.result{
+	height:100px;
+	text-align:center;
+	font-size:75px;
+}
+.option input:checked .option{
+	background:#00030C;
+	color:#f6f6f6; 
+}
+</style>
+ <!-- W3 schools styles-->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+ <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+<div ng-controller="startTestCtrl as test">
+<nav class="navbar fixed-top navbar-toggleable-md navbar-inverse bg-inverse">
+<br/>
+        <div class="container">
+            <a class="navbar-brand" href=""><h2><i class="fa fa-line-chart" aria-hidden="true"></i>&nbsp;Testers</h2></a>
+      </div>
+      <br/>
+</nav>
+<div Style="color:white;font-weight:bold;font-size:2em; text-align:center;" id="quiz-time-left"></div>  
+<div style="background: #F2F2F2;" id="quizContainer" class="container">
+<div class="title" style="text-align: center; font-weight:bold; font-size: 1.5em;" >{{test.quizHeading}}</div>
+<div id="question" class="question" style="font-size: 2em; font-weight: bold;"></div>
+<label class="option"><input type="radio" name="option" value="A" /> <span  id="opt1"></span></label>
+<label class="option"><input type="radio" name="option" value="B" /> <span  id="opt2"></span></label>
+<label class="option"><input type="radio" name="option" value="C" /> <span  id="opt3"></span></label>
+<label class="option"><input type="radio" name="option" value="D" /> <span  id="opt4"></span></label>
+<button id="nextButton" class="next" ng-click="test.loadNextQuestion()">Next Question </button>
+</div>
+<br/>
+<footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p>Copyright &copy; Chinmaya Kinnarkar,2017
+                    <br/>Contact Me:<br/>
+                    <a href="https://github.com/ChinmayaKinnarkar"><i class="fa fa-github fa-fw fa-2x"></i></a>
+                       &nbsp;&nbsp;
+                    <a href="https://www.linkedin.com/in/chinmaya-kinnarkar-ab0620ba/"><i class="fa fa-linkedin fa-2x"></i></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Place to keep all the modals -->
+
+ <!-- Modal -->
+        <div class="modal fade startTestModal" id="ModalUserTestPerformance" role="dialog" data-backdrop="false">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div style="background-color: #FF9800;"  class="modal-header">
+                        <h4 align="center" class="modal-title"><span style="color:white;">: Please Read The instructions Carefully :</span></h4>
+                    </div>
+                    <div class="modal-body">
+                   <ul>
+                   <li>Time alloted for this test is 10mins</li>
+                   <li>Test will be automatically submitted when time's up</li>
+                   <li>Total questions : 10</li>
+                   <li>Don't refresh the page</li>
+                   <li>Answer once submitted will be final</li>
+                   <li>Start the test by clicking on the start button below</li>
+                   </ul>
+                   <h3 align="center"><strong><em>Best Of Luck!</em></strong></h3>
+                    </div>
+                    <div style="background-color: #FF9800;"  class="modal-footer">
+                    <button type="button" class="btn btn-success" ng-click="live.loadQuestion(0)">Start!</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <button type="button" class="btn btn-danger" id="returntotaketest">Back</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+<!-- MOdal for User Performance -->
+
+<!-- Modal -->
+        <div class="modal fade ModalUserTestPerformance" role="dialog" data-backdrop="false">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div style="background-color: #FF9800;"  class="modal-header">
+                        <h4 align="center" class="modal-title"><span style="color:white;">: Your Scores for the Test :</span></h4>
+                    </div>
+                    <div class="modal-body">
+                   <div style="background-color: #FF9800;" class="modal-body">
+                       <a  class=" list-group-item">User ID: {{test.performanceUserID}}</a>
+                       <a  class=" list-group-item">Total Correct Answers: {{test.correctAnswers}}</a>
+                        <a  class=" list-group-item">Scores: {{test.scores}}</a>
+                        <a  class=" list-group-item">Total Time Taken: {{test.timeTaken}} Seconds</a>
+
+                    </div>
+                   <h3 align="center"><strong><em>Thank You! For giving the Test...</em></strong></h3>
+                    </div>
+                    <div style="background-color: #29B6F6;"  class="modal-footer">
+    
+                        <button type="button" class="btn btn-danger" id="returntotaketest">Return</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
