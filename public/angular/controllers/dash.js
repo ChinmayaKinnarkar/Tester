@@ -1,4 +1,4 @@
-myApp.controller('dashCtrl', ['$filter', '$http', '$location', '$routeParams', 'queryService', 'authService', function ($filter, $http, $location, $routeParams, queryService, authService) {
+app.controller('dashCtrl', ['$filter', '$http', '$location', '$routeParams', 'queryService', 'authService', function ($filter, $http, $location, $routeParams, queryService, authService) {
 
     var main = this;
 
@@ -44,7 +44,7 @@ myApp.controller('dashCtrl', ['$filter', '$http', '$location', '$routeParams', '
     this.logged();
     this.userId = $routeParams.userId;
 
-    main.heading = "welcome to Examify"
+    main.heading = "Welcome to Testers"
 
 
     //code to get the details or number of tests taken,pending test as average score:
