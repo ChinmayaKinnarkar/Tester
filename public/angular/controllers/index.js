@@ -1,4 +1,4 @@
-myApp.controller('indexCtrl', ['$http', '$location', 'queryService', 'authService', function ($http, $location, queryService, authService) {
+app.controller('indexCtrl', ['$http', '$location', 'queryService', 'authService', function ($http, $location, queryService, authService) {
 
     var main = this;
 
