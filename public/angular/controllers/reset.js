@@ -1,4 +1,4 @@
-myApp.controller('resetCtrl', ['$http', '$location', '$routeParams', 'queryService', 'authService', function ($http, $location, $routeParams, queryService, authService) {
+app.controller('resetCtrl', ['$http', '$location', '$routeParams', 'queryService', 'authService', function ($http, $location, $routeParams, queryService, authService) {
 
     var main = this;
 
