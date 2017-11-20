@@ -35,7 +35,7 @@ app.config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpPr
             controllerAs: 'test'
         })
         .when('/startTest/:userId/:testId', {
-            templateUrl: 'views/liveTest.Html',
+            templateUrl: 'views/liveTest.html',
             controller: 'liveCtrl',
             controllerAs: 'live'
         })
