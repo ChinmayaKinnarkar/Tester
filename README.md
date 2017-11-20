@@ -34,7 +34,7 @@ This is a live test taking web app.
 HTML 5 , CSS3 , Bootstrap , AngularJS
 
 # Backend
-NodeJs , ExpressJs , MongoDB , JSONWebToken , SocketIO
+NodeJs , ExpressJs , MongoDB , JSONWebToken 
 
 # API tool
 Postman
