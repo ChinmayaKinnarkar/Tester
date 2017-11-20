@@ -1,4 +1,4 @@
-myApp.controller('liveCtrl', ['$scope', '$filter', '$http', '$location', '$routeParams', 'queryService', 'authService', function ($scope, $filter, $http, $location, $routeParams, queryService, authService) {
+app.controller('liveCtrl', ['$scope', '$filter', '$http', '$location', '$routeParams', 'queryService', 'authService', function ($scope, $filter, $http, $location, $routeParams, queryService, authService) {
 
     var main = this;
 
