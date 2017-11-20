@@ -65,7 +65,7 @@ app.get('/getUserinfofacebook', function(req, res) {
     if (error) {
       var err = resGenerator.generate(true, "Something is not working, error  : " + error, 500, null);
       res.json(err);
-    } 
+//    } 
      else {
          var response = resGenerator.generate(false, "Successfully Got all user info", 200, user);
           res.json(user);
@@ -96,8 +96,8 @@ var port = 3000;
 app.use(logger('dev'));
 
 //Data Base Connection
-var dbPath = "mongodb://localhost/Testers";
-mongoose.connect(dbPath);
+//var dbPath = "mongodb://localhost/Testers";
+mongoose.connect('mongodb://localhost/Testers',{useMongoClient: true,});
 mongoose.connection.once('open',function(){
   console.log("Database Connection Established Successfully");
 });
