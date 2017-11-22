@@ -11,8 +11,8 @@ var express = require('express'),
 app.use(require('morgan')('combined'));
 var GoogleAuth = require('../models/GoogleAuth');
 
-var GOOGLE_CLIENT_ID = "570609486769-cpvj79ktob43ls04smp86hl4laavk68l.apps.googleusercontent.com",
-    GOOGLE_CLIENT_SECRET = "GTqQIvQLuTMZffRGl1EGvUc1";
+var GOOGLE_CLIENT_ID = "535361132523-4962t94v8nn4vh72tlidb1uvnb0kgvgn.apps.googleusercontent.com",
+    GOOGLE_CLIENT_SECRET = "CLopVenqdlphou9cKQU2UWUY";
 
 module.exports = function (app, passport) {
 
@@ -63,7 +63,7 @@ module.exports = function (app, passport) {
     passport.use(new GoogleStrategy({
             clientID: GOOGLE_CLIENT_ID,
             clientSecret: GOOGLE_CLIENT_SECRET,
-            callbackURL: "http://ec2-54-179-155-238.ap-southeast-1.compute.amazonaws.com:3000/auth/google/callback",
+            callbackURL: "https://rocky-hollows-68289.herokuapp.com/auth/google/callback",
             passReqToCallback: true
         },
         function (request, accessToken, refreshToken, profile, done) {
